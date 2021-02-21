@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <!-- <link rel="stylesheet" href="css/arjs-highnoon.css" /> -->
+  </head>
+  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  <script src="./dist/bundle.js"></script>
+
+  <!-- <script src="js/arjs-highnoon.js"></script> -->
+
+  <body style="margin: 0px; overflow: hidden">
+    <a-scene
+      cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;"
+      raycaster="objects: [mccreehandler];"
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      >
+      <a-assets>
+        <a-asset-item
+          id="mccree--asset"
+          src="src/assets/mccree.gltf"
+        ></a-asset-item>
+        <img id="overwatch-logo" src="src/assets/overwatch-logo.png" />
+        <img id="mccree-spinner" src="src/assets/mccree-base-spinner.png" />
+      </a-assets>
+
+      <a-marker
+        id="mccree--marker"
+        type="pattern"
+        url="src/patterns/pattern1.patt"
+      >
+        <a-plane
+          id="mccree-base-spinner"
+          position="0 -0.01 0"
+          rotation="-90 0 0"
+          scale="0.25 0.25 0.25"
+          material="src: #mccree-spinner; transparent: true; alpha-test:0.9"
+          animation__rotation="property: rotation; startEvents: startAnimation; from: -90 0 0; to:-90 0 270; dur: 2500; easing: easeOutQuad;"
+          animation__scale="property: scale; startEvents: startAnimation; from: 0.45 0.45 0.45; to: 3.5 3.5 3.5; dur: 1000; easing: easeOutQuad"
+          animation__opacity="property: opacity; startEvents: startAnimation; delay: 3000; from: 1; to: 0; dur: 1000"
+          animation__scaleReset="property: scale; startEvents: startAnimation; delay: 4000; to: 0.45 0.45 0.45; dur: 1;"
+          animation__opacityReset="property: opacity; startEvents: startAnimation; delay: 4010; from: 0; to: 1; dur: 1"
+        ></a-plane>
+        <a-entity
+          id="particle-system"
+          position="0 0.25 -0.25"
+          scale="2 2 2"
+          particle-system="
+                texture: src/assets/overwatch-logo.png;
+                type:3;
+                color: #ffffff, #ffffff; 
+                size: 1;
+                positionSpread: 0 0 0;
+                rotationAxis:y;
+                velocityValue: 0 2.5 0;
+                velocitySpread: 0 .75 0;
+                accelerationValue: 0 -1 0;
+                accelerationSpread: 1 0 1;
+                rotationAngle: 0; 
+                blending: 1;
+                particleCount: 10;
+                maxAge: 1.5; 
+                enabled: false;"
+        >
+        </a-entity>
+
+        <a-entity
+          id="mccree--model"
+          position="0 0 0"
+          scale="1 1 1"
+          gltf-model="#mccree--asset"
+          mccreehandler
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
