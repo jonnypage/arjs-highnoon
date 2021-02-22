@@ -28,6 +28,7 @@
         ></a-asset-item>
         <img id="overwatch-logo" src="src/assets/overwatch-logo.png" />
         <img id="mccree-spinner" src="src/assets/mccree-base-spinner.png" />
+        <audio id="audio-high-noon" src="src/assets/itshighnoon.mp3"></audio>
       </a-assets>
 
       <a-marker
@@ -75,6 +76,7 @@
           position="0 0 0"
           scale="1 1 1"
           gltf-model="#mccree--asset"
+          sound="src: #audioHighNoon; on: click"
           mccreehandler
         ></a-entity>
       </a-marker>

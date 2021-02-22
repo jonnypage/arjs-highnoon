@@ -1,4 +1,4 @@
-const audioHighNoon = new Audio('src/assets/itshighnoon.ogg');
+const audioHighNoon = new Audio('src/assets/itshighnoon.mp3');
 let isAnimationPlaying = false;
 
 AFRAME.registerComponent('mccreehandler', {
@@ -18,7 +18,6 @@ function onMccreeHit() {
     isAnimationPlaying = true;
 
     // Play the audio
-    audioHighNoon.muted = false;
     audioHighNoon.play();
 
     // Start the animation for the spinning base
