@@ -18,6 +18,7 @@ function onMccreeHit() {
     isAnimationPlaying = true;
 
     // Play the audio
+    audioHighNoon.muted = false;
     audioHighNoon.play();
 
     // Start the animation for the spinning base
