@@ -20,7 +20,9 @@ You can run the ar example by uploading it to a SSL encrypted server and opening
 ---
 
 The Asset can be viewed at https://jonnypage.github.io/arjs-highnoon/ using this pattern:
+
 ![ar pattern](https://jonnypage.github.io/arjs-highnoon/src/patterns/pattern-01.png)
+
 A printable pdf version can be found [here](https://github.com/jonnypage/arjs-highnoon/blob/main/src/patterns/pattern-01-printable.pdf)
 
 The interaction and animations are built using [A-Frame animations](https://github.com/aframevr/aframe) and the [A-Frame particle system](https://github.com/IdeaSpaceVR/aframe-particle-system-component)
