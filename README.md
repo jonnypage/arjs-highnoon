@@ -2,6 +2,8 @@
 
 This is a quick example of webAR using [ar.js](https://ar-js-org.github.io/AR.js/) with a marker. It loads a gltf file, and has interaction built in when the user clicks on the model. The model will stay in perspective to the user as long as they keep the camera pointed at the marker. The model can be interacted with by clicking or tapping on it.
 
+There is a fork of this project at [arjs-highnoon-geolocation](https://github.com/jonnypage/arjs-highnoon-geolocation) which uses ar.js geolocation to display the 3d entity in AR.
+
 ## Requirements
 
 - [Node.js](http://nodejs.org/)
